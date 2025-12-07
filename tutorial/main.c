@@ -1,18 +1,17 @@
 #include <stdio.h>
 
-// ポインタについて
-// 引数には、*を付けてポインタ型で受け取る
-void swap(int* x, int* y) {
-    int temp = *x;
-    *x = *y;
-    *y = temp;
-}
+#define DATA_NUM 10  // データ数
+int data[] = {1, 7, 11, 12, 33, 57, 63, 72, 89, 99};
 
 int main(void) {
-    int a = 7;
-    int b = 12;
-
-    swap(&a, &b);  // 変数aとbのアドレスを渡す
-    printf("a = %d, b = %d\n", a, b);
-    return 0;
+    int target = 57;
+    for (int i = 0; i < DATA_NUM; i++) {
+        if (data[i] == target) {
+            if (data[i] == target) {
+                printf("data[%d] に見つかりました\n", i);
+                return 0;
+            }
+        }
+    }
+    printf("見つかりませんでした\n");
 }
