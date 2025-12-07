@@ -1,12 +1,18 @@
 #include <iostream>
 #include <array>
+#include <string>
+#include <tuple>
 
 int main() {
-    std::array<int, 3> array_1 = {1, 2, 3};
-    std::array<int, 3> array_2 = array_1;
+    std::tuple<std::string, int, std::string> person{"Alice", 30, "Engineer"};
 
-    for (int i = 0; i < array_2.size(); ++i) {
-        std::cout << array_2[i] << std::endl;
-    }
+    std::string name;
+    int age;
+    std::string country;
+
+    std::tie(name, age, country) = person;
+    std::cout << "Name: " << name << "\n";
+    std::cout << "Age: " << age << "\n";
+    std::cout << "Country: " << country << "\n";
     return 0;
 }
