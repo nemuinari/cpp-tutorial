@@ -1,16 +1,13 @@
 #include <iostream>
-#include <map>
-#include <unordered_map>
+#include <vector>
+#include <set>
 
 int main() {
-    std::unordered_map<std::string, int> persons = {
-        {"Alice", 18},
-        {"Bob", 20},
-    };
-    std::cout << "Alice: " << persons["Alice"] << "\n"
-              << "Bob: " << persons["Bob"] << std::endl;
+    std::set<int> x = {0, 1, 2, 3, 4};
 
-    persons.insert({"Charlie", 22});
-    std::cout << "Charlie: " << persons["Charlie"] << "\n" << std::endl;
+    for (auto it = x.begin(); it != x.end(); ++it) {
+        std::cout << *it << std::endl;
+    }
+
     return 0;
 }
