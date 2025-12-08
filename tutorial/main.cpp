@@ -2,17 +2,14 @@
 #include <array>
 #include <string>
 #include <tuple>
+#include <vector>
 
 int main() {
-    std::tuple<std::string, int, std::string> person{"Alice", 30, "Engineer"};
+    std::vector<int> x = {0, 1, 2, 3, 4};
 
-    std::string name;
-    int age;
-    std::string country;
-
-    std::tie(name, age, country) = person;
-    std::cout << "Name: " << name << "\n";
-    std::cout << "Age: " << age << "\n";
-    std::cout << "Country: " << country << "\n";
+    x.emplace_back(5);  // 末尾に 5 を追加
+    for (int i = 0; i < x.size(); ++i) {
+        std::cout << x[i] << std::endl;
+    }
     return 0;
 }
