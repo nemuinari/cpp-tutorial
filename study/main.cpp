@@ -1,4 +1,4 @@
-#include "p_1_2.cpp"
+#include "p_1_3.cpp"
 
 int main() {
     practice();
