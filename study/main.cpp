@@ -1,7 +1,7 @@
-#include "p_1_6.cpp"
+#include "p_1_8.cpp"
 
 int main() {
     practice();
     return 0;
 }
-// p.1.6
+// p.1.8
