@@ -2,19 +2,23 @@
 using namespace std;
 
 int main() {
-    int N;
-    int I, r;
-    int total = 0;
-
+    std::string N;
     std::cin >> N;
 
-    for (int i = 0; i < N; i++) {
-        std::cin >> I >> r;
-        total += (r - I) + 1;
+    int num = std::stoi(N);
+    int total = 0;
+
+    for (int i = 0; i < N.size(); i++) {
+        total += N[i] - '0';
     }
-    std::cout << total << endl;
+
+    if (num % total == 0) {
+        std::cout << "Yes" << std::endl;
+    } else {
+        std::cout << "No" << std::endl;
+    }
 
     return 0;
 }
 
-// L B-Theater
+// L B-Harshad Number
