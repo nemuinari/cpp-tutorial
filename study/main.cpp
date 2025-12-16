@@ -1,7 +1,7 @@
-#include "p_3/p_3.cpp"
+#include "p_3/p_4.cpp"
 
 int main() {
     practice();
     return 0;
 }
-// p.3.3 初期値を受け取るコンストラクター
+// p.3.4 NSDMI
