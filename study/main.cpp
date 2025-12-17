@@ -1,7 +1,7 @@
-#include "p_3/p_8.cpp"
+#include "p_3/p_ex3.cpp"
 
 int main() {
     practice();
     return 0;
 }
-// p.3.8 フレンド関数
+// 3 まとめ
