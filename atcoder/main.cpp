@@ -2,26 +2,21 @@
 using namespace std;
 
 int main() {
-    int N, K;
-    int result = 0;
+    std::string S;
+    std::cin >> S;
 
-    std::cin >> N;
-    std::cin >> K;
+    int total = 1;
+    for (int i = 0; i < S.size(); i++) {
+        char s = S[i];
 
-    std::vector<int> x(N);
-    for (int i = 0; i < N; i++) {
-        std::cin >> x[i];
+        if (s == '+') {
+            total++;
+        } else if (s == '-') {
+            total--;
+        }
     }
-
-    for (int i = 0; i < N; i++) {
-        // type_A // result += x[i];
-        // type_B // result += (K - x[i]) * 2;
-
-        result += min(x[i] * 2, (K - x[i]) * 2);
-    }
-
-    std::cout << result << std::endl;
+    std::cout << total << std::endl;
 
     return 0;
 }
-// B - Collecting Balls (Easy Version)
+// M EX12
