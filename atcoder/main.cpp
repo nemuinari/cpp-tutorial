@@ -2,17 +2,13 @@
 using namespace std;
 
 int main() {
-    char c;
-    std::cin >> c;
+    std::string A;
+    std::string s;
+    std::string C;
 
-    std::string vowels = "aeiou";
-
-    if (vowels.find(c) != std::string::npos) {
-        std::cout << "vowel" << std::endl;
-    } else {
-        std::cout << "consonant" << std::endl;
-    }
+    std::cin >> A >> s >> C; 
+    std::cout << A.at(0) << s.at(0) << C.at(0);
 
     return 0;
 }
-// A - 居合を終え、青い絵を覆う
+// A - AtCoder *** Contes 
