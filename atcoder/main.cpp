@@ -2,21 +2,17 @@
 using namespace std;
 
 int main() {
-    std::string S;
-    std::cin >> S;
+    char c;
+    std::cin >> c;
 
-    int total = 1;
-    for (int i = 0; i < S.size(); i++) {
-        char s = S[i];
+    std::string vowels = "aeiou";
 
-        if (s == '+') {
-            total++;
-        } else if (s == '-') {
-            total--;
-        }
+    if (vowels.find(c) != std::string::npos) {
+        std::cout << "vowel" << std::endl;
+    } else {
+        std::cout << "consonant" << std::endl;
     }
-    std::cout << total << std::endl;
 
     return 0;
 }
-// M EX12
+// A - 居合を終え、青い絵を覆う
