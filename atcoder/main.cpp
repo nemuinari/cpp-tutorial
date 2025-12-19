@@ -2,11 +2,17 @@
 using namespace std;
 
 int main() {
-    std::string W;
-    std::cin >> W;
+    std::string A, B;
 
-    std::cout << W + 's' << std::endl;
+    std::cin >> A; 
+    std::cin >> B; 
+
+    if (A.size() > B.size()) {
+        std::cout << A << std::endl; 
+    } else if (A.size() < B.size()) {
+        std::cout << B << std::endl;
+    }
 
     return 0;
 }
-// M - A - 複数形 
+// M - A - 高橋くんの研修 
