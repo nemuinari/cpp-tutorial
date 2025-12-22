@@ -1,7 +1,7 @@
-#include "p_4/p_ex3.cpp"
+#include "p_5/p_1.cpp"
 
 int main() {
     practice();
     return 0;
 }
-// まとめ
+// 配列とポインター
