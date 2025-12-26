@@ -4,4 +4,4 @@ int main() {
   practice();
   return 0;
 }
-// Global Variables Pointer
+// tests
