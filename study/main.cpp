@@ -1,7 +1,7 @@
-#include "p_5/p_3.cpp"
+#include "p_5/p_7.cpp"
 
 int main() {
   practice();
   return 0;
 }
-// new, delete
+// Global Variables Pointer

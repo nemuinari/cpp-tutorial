@@ -4,24 +4,25 @@ class Base {
   int i;
 
 public:
-  explicit Base(int i) : i(i) {}
-
-  int local() {
-    int i = 42;
-    return i;
+  Base(int i) : i(i) {
+    std::cout << "コンストラクタ実行 value: " << i << std::endl;
   }
 
-  int* dyn_alloc() {
-    int* ptr = new int;
-    *ptr = 42;
-    return ptr;
+  ~Base() {
+    std::cout << "デストラクタ実行 value: " << i << std::endl;
+  }
+
+  void hello() {
+    std::cout << "hello value: " << i << std::endl;
   }
 };
 
 void practice() {
-  Base b(100);
-  int* d = b.dyn_alloc();
+  std::cout << "--- practice関数 開始---" << std::endl;
 
-  std::cout << "value: " << *d << std::endl;
-  delete d;
+  Base* b_ptr = new Base(10);
+  b_ptr->hello(); // -> ポインタに対して使う（*b_ptr).hello();
+
+  delete b_ptr;
+  std::cout << "--- practice関数 終了---" << std::endl;
 };
