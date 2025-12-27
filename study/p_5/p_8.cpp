@@ -3,43 +3,46 @@
 
 // copy and move constructor
 class Object {
-  int* m_value;
+    int* m_value;
 
 public:
-  // 通常のコンストラクタ
-  explicit Object(int value) : m_value(new int(value)) {
-    std::cout << "Constructor: " << *m_value << " at " << m_value << std::endl;
-  }
+    // 通常のコンストラクタ
+    explicit Object(int value)
+      : m_value(new int(value)) {
+        std::cout << "Constructor: " << *m_value << " at " << m_value << std::endl;
+    }
 
-  // デストラクタ
-  ~Object() {
-    delete m_value; // 配列でないなら delete、配列なら delete[]
-    std::cout << "Destructor: " << m_value << std::endl;
-  }
+    // デストラクタ
+    ~Object() {
+        delete m_value; // 配列でないなら delete、配列なら delete[]
+        std::cout << "Destructor: " << m_value << std::endl;
+    }
 
-  // コピーコンストラクタ
-  Object(const Object& other) : m_value(new int(*other.m_value)) {
-    std::cout << "Copy Constructor: " << *m_value << " at " << m_value << std::endl;
-  }
+    // コピーコンストラクタ
+    Object(const Object& other)
+      : m_value(new int(*other.m_value)) {
+        std::cout << "Copy Constructor: " << *m_value << " at " << m_value << std::endl;
+    }
 
-  // ムーブコンストラクタ (所有権の移転)
-  Object(Object&& other) : m_value{other.m_value} {
-    other.m_value = nullptr; // 元のポインタを空にする
-    std::cout << "Move Constructor: " << *m_value << " at " << m_value << std::endl;
-  }
+    // ムーブコンストラクタ (所有権の移転)
+    Object(Object&& other)
+      : m_value{other.m_value} {
+        other.m_value = nullptr; // 元のポインタを空にする
+        std::cout << "Move Constructor: " << *m_value << " at " << m_value << std::endl;
+    }
 };
 
 void practice() {
-  int i = 20;
+    int i = 20;
 
-  std::cout << "--- Step 1: Create a ---" << std::endl;
-  Object a(i);
+    std::cout << "--- Step 1: Create a ---" << std::endl;
+    Object a(i);
 
-  std::cout << "--- Step 2: Copy a to b ---" << std::endl;
-  Object b = a; // コピーコンストラクタが呼ばれる
+    std::cout << "--- Step 2: Copy a to b ---" << std::endl;
+    Object b = a; // コピーコンストラクタが呼ばれる
 
-  std::cout << "--- Step 3: Move b to c ---" << std::endl;
-  Object c = std::move(b); // ムーブコンストラクタが呼ばれる
+    std::cout << "--- Step 3: Move b to c ---" << std::endl;
+    Object c = std::move(b); // ムーブコンストラクタが呼ばれる
 }
 
 /*

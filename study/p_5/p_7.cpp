@@ -2,23 +2,23 @@
 #include <string>
 
 class Object {
-  int value;
+    int value;
 
 public:
-  Object(int value) : value{value} {
-    // int's copy constructor
-  }
+    Object(int value) : value{value} {
+        // int's copy constructor
+    }
 
-  const int& get_value() const {
-    return value;
-  }
+    const int& get_value() const {
+        return value;
+    }
 };
 
 void practice() {
-  int i = 42;
-  Object obj{i};
-  const int& value = obj.get_value();
-  std::cout << value << std::endl;
+    int i = 42;
+    Object obj{i};
+    const int& value = obj.get_value();
+    std::cout << value << std::endl;
 }
 
 /*
