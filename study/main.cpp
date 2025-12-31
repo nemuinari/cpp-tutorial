@@ -1,7 +1,8 @@
-#include "p6/p5.cpp"
+#include "p6/p8.cpp"
 
 // execution entry point
-int main() {
+int main()
+{
     practice();
     return 0;
 }
