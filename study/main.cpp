@@ -1,4 +1,4 @@
-#include "p7/p1.cpp"
+#include "p7/p2.cpp"
 
 // execution entry point
 int main()
