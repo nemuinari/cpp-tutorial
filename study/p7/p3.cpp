@@ -28,11 +28,13 @@ void practice()
     d.method_Base();    // OK.
     d.method_Derived(); // OK.
 
-    Base& b = d;
+    Base &b = d;
     b.method_Base(); // OK.
-    // b.method_Derived(); // Error: 'class Base' has no member named 'method_Derived'
+    // b.method_Derived(); // Error: 'class Base' has no member named
+    // 'method_Derived'
 
-    Base* pb = &d;
+    Base *pb = &d;
     pb->method_Base(); // OK.
-    // pb->method_Derived(); // Error: 'class Base' has no member named 'method_Derived'
+    // pb->method_Derived(); // Error: 'class Base' has no member named
+    // 'method_Derived'
 }
