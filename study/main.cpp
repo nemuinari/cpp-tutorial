@@ -1,4 +1,4 @@
-#include "p7/p5.cpp"
+#include "p7/test.cpp"
 
 // execution entry point
 int main()
