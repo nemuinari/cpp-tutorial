@@ -1,43 +1,64 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
+// 参照渡しを用いて、呼び出し側の変数の値を変更する
+void saiten(vector<vector<int>> &A, int &correct_count, int &wrong_count)
 {
-    int N, M;
-    cin >> N >> M;
-
-    vector<int> A(M), B(M);
-    for (int i = 0; i < M; i++)
+    // 呼び出し側のAの各マスを正しい値に修正する
+    for (int i = 0; i < 9; i++)
     {
-        cin >> A.at(i) >> B.at(i);
-    }
-
-    // 1. 2次元配列の宣言（N x N を '-' で初期化）
-    vector<vector<char>> results(N, vector<char>(N, '-'));
-
-    // 2. 試合結果を書き込む
-    for (int i = 0; i < M; i++)
-    {
-        // インデックスに合わせるため -1 する
-        int winner = A.at(i) - 1;
-        int loser = B.at(i) - 1;
-
-        results.at(winner).at(loser) = 'o'; // 勝者に 'o'
-        results.at(loser).at(winner) = 'x'; // 敗者に 'x'
-    }
-
-    // 3. 表の出力
-    for (int i = 0; i < N; i++)
-    {
-        for (int j = 0; j < N; j++)
+        for (int j = 0; j < 9; j++)
         {
-            cout << results.at(i).at(j);
-            if (j != N - 1)
+            int correct_value = (i + 1) * (j + 1); // 正しい値を計算
+            if (A[i][j] == correct_value)
             {
-                cout << " ";
+                correct_count++; // 正しい値のマスの個数をカウント
+            }
+            else
+            {
+                wrong_count++;           // 誤った値のマスの個数をカウント
+                A[i][j] = correct_value; // 正しい値に修正
             }
         }
-        cout << endl;
     }
 }
-// T - EX18
+
+// -------------------
+// ここから先は変更しない
+// -------------------
+int main()
+{
+    // A君の回答を受け取る
+    vector<vector<int>> A(9, vector<int>(9));
+    for (int i = 0; i < 9; i++)
+    {
+        for (int j = 0; j < 9; j++)
+        {
+            cin >> A.at(i).at(j);
+        }
+    }
+
+    int correct_count = 0; // ここに正しい値のマスの個数を入れる
+    int wrong_count = 0;   // ここに誤った値のマスの個数を入れる
+
+    // A, correct_count, wrong_countを参照渡し
+    saiten(A, correct_count, wrong_count);
+
+    // 正しく修正した表を出力
+    for (int i = 0; i < 9; i++)
+    {
+        for (int j = 0; j < 9; j++)
+        {
+            cout << A.at(i).at(j);
+            if (j < 8)
+                cout << " ";
+            else
+                cout << endl;
+        }
+    }
+    // 正しいマスの個数を出力
+    cout << correct_count << endl;
+    // 誤っているマスの個数を出力
+    cout << wrong_count << endl;
+}
+// U - EX19
