@@ -2,37 +2,43 @@
 #include <utility>
 
 // copy and move constructor
-class Object {
-    int* m_value;
+class Object
+{
+    int *m_value;
 
 public:
     // 通常のコンストラクタ
-    explicit Object(int value)
-      : m_value(new int(value)) {
-        std::cout << "Constructor: " << *m_value << " at " << m_value << std::endl;
+    explicit Object(int value) : m_value(new int(value))
+    {
+        std::cout << "Constructor: " << *m_value << " at " << m_value
+                  << std::endl;
     }
 
     // デストラクタ
-    ~Object() {
+    ~Object()
+    {
         delete m_value; // 配列でないなら delete、配列なら delete[]
         std::cout << "Destructor: " << m_value << std::endl;
     }
 
     // コピーコンストラクタ
-    Object(const Object& other)
-      : m_value(new int(*other.m_value)) {
-        std::cout << "Copy Constructor: " << *m_value << " at " << m_value << std::endl;
+    Object(const Object &other) : m_value(new int(*other.m_value))
+    {
+        std::cout << "Copy Constructor: " << *m_value << " at " << m_value
+                  << std::endl;
     }
 
     // ムーブコンストラクタ (所有権の移転)
-    Object(Object&& other)
-      : m_value{other.m_value} {
+    Object(Object &&other) : m_value{other.m_value}
+    {
         other.m_value = nullptr; // 元のポインタを空にする
-        std::cout << "Move Constructor: " << *m_value << " at " << m_value << std::endl;
+        std::cout << "Move Constructor: " << *m_value << " at " << m_value
+                  << std::endl;
     }
 };
 
-void practice() {
+void practice()
+{
     int i = 20;
 
     std::cout << "--- Step 1: Create a ---" << std::endl;

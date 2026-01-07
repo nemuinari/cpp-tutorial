@@ -2,7 +2,7 @@
 using namespace std;
 
 // 参照渡しを用いて、呼び出し側の変数の値を変更する
-void saiten(vector<vector<int>> &A, int &correct_count, int &wrong_count)
+void saiten(vector<vector<int>>& A, int& correct_count, int& wrong_count)
 {
     // 呼び出し側のAの各マスを正しい値に修正する
     for (int i = 0; i < 9; i++)
@@ -37,13 +37,10 @@ int main()
             cin >> A.at(i).at(j);
         }
     }
-
     int correct_count = 0; // ここに正しい値のマスの個数を入れる
     int wrong_count = 0;   // ここに誤った値のマスの個数を入れる
-
     // A, correct_count, wrong_countを参照渡し
     saiten(A, correct_count, wrong_count);
-
     // 正しく修正した表を出力
     for (int i = 0; i < 9; i++)
     {
