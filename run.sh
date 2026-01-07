@@ -133,8 +133,6 @@ main() {
             exit 1
             ;;
     esac
-    
-    echo -e "${GREEN}Done!${NC}"
 }
 
 main "$@" 
