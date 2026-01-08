@@ -6,22 +6,18 @@ class Base_A
 
 public:
     Base_A(int v = 0) : value{v} {}
-    void method()
-    {
-        std::cout << "Base_A method called. value = " << value << std::endl;
-    };
+    void method() { std::cout << "Base_A method called. value = " << value << std::endl; };
 };
+
 class Base_B
 {
     int value;
 
 public:
     Base_B(int v = 0) : value{v} {}
-    void method()
-    {
-        std::cout << "Base_B method called. value = " << value << std::endl;
-    }
+    void method() { std::cout << "Base_B method called. value = " << value << std::endl; }
 };
+
 class Derived : public Base_A, public Base_B
 {
 public:
@@ -32,6 +28,7 @@ public:
         Base_B::method(); // Base_Bのmethodを呼び出す
     }
 };
+
 void practice()
 {
     Derived obj{10, 20};
