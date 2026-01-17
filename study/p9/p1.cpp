@@ -2,14 +2,14 @@
 
 class Base {
 public:
-    template <typename T> T id(T a) { return a; };
+  template <typename T> T id(T a) { return a; };
 };
 
 void execute() {
-    Base b;
-    std::cout << "initialize: " << b.id<int>(1) << std::endl;
-    std::cout << "float: " << b.id<float>(1.1f) << std::endl;
-    std::cout << "double: " << b.id<double>(1.11) << std::endl;
+  Base b;
+  std::cout << "initialize: " << b.id<int>(1) << std::endl;
+  std::cout << "float: " << b.id<float>(1.1f) << std::endl;
+  std::cout << "double: " << b.id<double>(1.11) << std::endl;
 }
 
 /* template on function
