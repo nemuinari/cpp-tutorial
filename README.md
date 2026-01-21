@@ -1,7 +1,8 @@
 # c-tutorial
 
-'''t
-// build
-bash is "$ g++ filename.xxx -o main" for windows
-'''
+'''bash
+// build-windows
+$ g++ filename.xxx -o main
+$ ./main
 
+'''
